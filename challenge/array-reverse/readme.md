@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![img](./1.png)
+![img](./array-reverse.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
@@ -17,5 +17,5 @@ In the for loop :
             int y=arr[j];
 
             revArr[i]=y;
-            
+
 ``
