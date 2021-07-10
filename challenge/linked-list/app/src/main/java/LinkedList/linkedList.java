@@ -1,14 +1,15 @@
 package LinkedList;
 
-import java.io.Serializable;
-import java.util.List;
-
 public class linkedList<T> {
-    Node head;
+    Node<T> head;
     int size = 0;
 
-    public void insertAtEnd(java.io.Serializable data) {
-        Node<java.io.Serializable> node = new Node<>(data);
+    public Boolean isEmpty(){
+        return this.head == null;
+    }
+
+    public void insertAtEnd(T data) {
+        Node<T> node = new Node<>(data);
         if (this.head == null) {
             this.head = node;
         } else {
@@ -21,13 +22,112 @@ public class linkedList<T> {
         size++;
     }
 
+    public void append(T data) {
+        Node<T> node = new Node<>(data);
+        if (this.head == null) {
+            this.head = node;
+        } else {
+            Node<T> current = this.head;
+            while (current != null) {
+                if (current.getNext() == null) {
+                    current.setNext(node);
+                    break;
+                }
+                current = current.getNext();
+            }
+        }
+        size++;
+    }
+
+    public void insertBefore(T value, T newValue) {
+        boolean isInclude = includes(value);
+        if (isInclude) {
+            if (this.head == null) {
+            } else if (this.head.getData() == value) {
+                Node<T> node = new Node<>(newValue);
+                node.setNext(this.head);
+                this.head = node;
+                size++;
+            } else {
+                Node<T> node = new Node<>(newValue);
+                Node<T> current = this.head;
+                Node<T> previous = current;
+                while (current != null) {
+                    if (current.getData() != value) {
+                        previous = current;
+                        current = current.getNext();
+                    } else {
+                        node.setNext(current);
+                        previous.setNext(node);
+                        break;
+                    }
+                }
+                size++;
+            }
+        }
+
+    }
+
+    public void insertAfter(T value, T newValue) {
+        boolean isInclude = includes(value);
+        if (isInclude) {
+            if (this.head == null) {
+                return;
+
+            } else if (this.head.getData() == value) {
+                Node<T> node = new Node<>(newValue);
+                Node<T> nextNode = head.getNext();
+                this.head.setNext(node);
+                node.setNext(nextNode);
+
+            } else {
+
+                Node<T> node = new Node<>(newValue);
+                Node<T> current = this.head;
+                Node<T> nextNode = current.getNext();
+                while (current != null) {
+
+                    if (current.getData() == value) {
+
+                        if (current.getNext() == null) {
+                            current.setNext(node);
+
+                        } else {
+                            nextNode = current.getNext();
+                            current.setNext(node);
+                            node.setNext(nextNode);
+                        }
+                        break;
+                    }
+                    current=current.getNext();
+                }
+            }
+            size++;
+        }
+    }
+
+    public  T kthFromEnd(int numberFromEnd){
+        int  indexOfValue = (size-1) - numberFromEnd;
+        int index =0;
+        if (indexOfValue>=0){
+            Node<T> current = this.head;
+            while (current != null){
+                if (index == indexOfValue){
+                    return (T) current.getData();
+                }
+                index++;
+                current=current.getNext();
+            }
+        }
+        return (T) "Out of Bonds";
+
+    }
+
+//    public linkedList<T> zipLists(linkedList list1,linkedList list2){
+//
+//    }
+
     public int getSize() {
-//        int arraySize=0;
-//        Node<T> current = this.head;
-//        while (current.getNext() != null) {
-//            current=current.getNext();
-//            arraySize
-//        }
         return size;
     }
 
@@ -36,7 +136,7 @@ public class linkedList<T> {
             return false;
         }
         Node<T> current = this.head;
-        while (current.getNext() != null) {
+        while (current != null) {
             if (current.getData() == value) {
                 return true;
             }
@@ -59,17 +159,16 @@ public class linkedList<T> {
         return showList.toString();
     }
 
+    public T getValue(int i) {
+        int length = 0;
+        T data;
 
-    public Object getValue(int i){
-       int length = 0;
-       Object data;
-
-        Node current = this.head;
+        Node<T> current = this.head;
         while (current != null) {
             if (length == i) {
                 data = current.getData();
 //                System.out.println(data);
-                return  data;
+                return data;
 
             }
             length++;
@@ -78,42 +177,42 @@ public class linkedList<T> {
         return null;
     }
 
-
-
     public linkedList<T> reverse(linkedList<T> list) {
         int length = size;
         Node<T> current = this.head;
-        T lastNode = (T) list.getValue(length-1);
-        int addedNodes =0;
-        for (int i = 0; i < length-1; i++) {
-            T value = (T) list.getValue(length-2-i);
-            list.insertAtEnd((Serializable) value);
+        T lastNode = list.getValue(length - 1);
+        int addedNodes = 0;
+        for (int i = 0; i < length - 1; i++) {
+            T value = list.getValue(length - 2 - i);
+            list.insertAtEnd((T) value);
             addedNodes++;
         }
-        int removeIndex=0;
-        while (current.getNext() != null){
-            if (current.getData().equals(lastNode)&&removeIndex==length-1){
-                 this.head=current;
-                 size =size-addedNodes;
-                 break;
+        int removeIndex = 0;
+        while (current.getNext() != null) {
+            if (current.getData().equals(lastNode) && removeIndex == length - 1) {
+                this.head = current;
+                size = size - addedNodes;
+                break;
             }
             removeIndex++;
-            current=current.getNext();
+            current = current.getNext();
         }
         return list;
     }
 
-    public boolean palindrome(linkedList<T> array){
+//    public linkedList<T> reverse2(linkedList<T> list){
+//
+//    }
+
+    public boolean palindrome(linkedList<T> array) {
 //        linkedList<T> reversedArray= array.reverse(array);
         for (int i = 0; i < size; i++) {
-            if (array.getValue(i)==array.getValue(size-1-i)){
-                continue;
-            }else {
+            if (array.getValue(i) == array.getValue(size - 1 - i)) {
+            } else {
                 return false;
             }
         }
         return true;
     }
-
 
 }
