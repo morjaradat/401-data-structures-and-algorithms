@@ -31,7 +31,6 @@ public class Stack<T> {
         return temp.getData();
     }
 
-
     public T peek() {
         if (isEmpty()) {
             return null;
@@ -40,7 +39,9 @@ public class Stack<T> {
         }
     }
 
-
+    public T getTop() {
+        return (T) top.getData();
+    }
 
 
     public boolean isEmpty() {
