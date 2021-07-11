@@ -1,3 +1,4 @@
+import Type.PseudoQueue;
 import Type.Queue;
 import Type.Stack;
 import org.junit.Test;
@@ -132,4 +133,77 @@ public class AppTest {
         assertEquals(true, queue.isEmpty());
     }
 
+
+
+
+
+    @Test
+    public void instantiateOnEmptyPseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        assertEquals(true, pseudoQueue.isEmpty());
+    }
+
+    @Test
+    public void enqueueOnePseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        assertEquals(false, pseudoQueue.isEmpty());
+        assertEquals(1, pseudoQueue.getSize());
+    }
+
+    @Test
+    public void enqueueMultiplePseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(1);
+        assertEquals(false, pseudoQueue.isEmpty());
+        assertEquals(4, pseudoQueue.getSize());
+    }
+
+    @Test
+    public void callPeekOrDequeuePseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+//        assertEquals(null, pseudoQueue.peek());
+        assertEquals(true, pseudoQueue.isEmpty());
+    }
+
+//    @Test
+//    public void peekPseudoQueue() {
+//        PseudoQueue pseudoQueue = new PseudoQueue();
+//        pseudoQueue.enqueue(1);
+//        pseudoQueue.enqueue(2);
+//        pseudoQueue.enqueue(3);
+//        pseudoQueue.enqueue(4);
+//        assertEquals(1, pseudoQueue.peek());
+//    }
+
+    @Test
+    public void singleDequeuesPseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+        pseudoQueue.enqueue(4);
+        pseudoQueue.dequeue();
+        assertEquals(false, pseudoQueue.isEmpty());
+//        assertEquals(4, pseudoQueue.peek());
+        assertEquals(3, pseudoQueue.getSize());
+    }
+
+    @Test
+    public void multipleDequeuesPseudoQueue() {
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+        pseudoQueue.enqueue(4);
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        assertEquals(true, pseudoQueue.isEmpty());
+        assertEquals(0, pseudoQueue.getSize());
+    }
 }
