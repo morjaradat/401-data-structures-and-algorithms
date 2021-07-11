@@ -31,3 +31,7 @@
 
 **PseudoQueue**
 - using stack method create an enqueue and dequeue method 
+
+# Whiteboard Process
+
+![img](./challenge11.jpg)
