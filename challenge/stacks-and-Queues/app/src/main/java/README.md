@@ -32,6 +32,11 @@
 **PseudoQueue**
 - using stack method create an enqueue and dequeue method 
 
+
+**AnimalShelter**
+- add two classes Cats and Dogs that extends from animal and in the animal shhter calss we create two queue with type dog and cat and enqueue and dequeue for each one 
 # Whiteboard Process
 
 ![img](./challenge11.jpg)
+
+![img](./challenge12.jpg)
