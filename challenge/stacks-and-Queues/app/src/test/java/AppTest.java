@@ -6,6 +6,7 @@ import animalShelter.Cats;
 import animalShelter.Dogs;
 import org.junit.Before;
 import org.junit.Test;
+import stack_queue_brackets.validateBrackets;
 
 import static org.junit.Assert.*;
 
@@ -143,9 +144,6 @@ public class AppTest {
     }
 
 
-
-
-
     @Test
     public void instantiateOnEmptyPseudoQueue() {
         PseudoQueue pseudoQueue = new PseudoQueue();
@@ -211,7 +209,7 @@ public class AppTest {
         emptyAnimalShelter = new Animal_Shelter();
 
         singleAnimalShelter = new Animal_Shelter();
-        singleAnimalShelter.enqueue(new Dogs( "momo", 5));
+        singleAnimalShelter.enqueue(new Dogs("momo", 5));
 
         multipleAnimalShelter = new Animal_Shelter();
         multipleAnimalShelter.enqueue(new Dogs("momo1", 13));
@@ -254,5 +252,20 @@ public class AppTest {
         assertEquals("semsem", multipleAnimalShelter.dequeue("dog").getName());
         assertNull(multipleAnimalShelter.dequeue("dog"));
         assertNull(multipleAnimalShelter.dequeue("cat"));
+    }
+
+    @Test
+    public void validateBrackets() {
+        validateBrackets validateBrackets = new validateBrackets();
+        assertFalse(validateBrackets.validateBracket("({}]["));
+        assertFalse(validateBrackets.validateBracket("[({}]"));
+        assertFalse(validateBrackets.validateBracket("(]("));
+        assertFalse(validateBrackets.validateBracket("{(}[)"));
+
+        assertTrue(validateBrackets.validateBracket("{}"));
+        assertTrue(validateBrackets.validateBracket("{}(){}"));
+        assertTrue(validateBrackets.validateBracket("()[[Extra Characters]]"));
+        assertTrue(validateBrackets.validateBracket("(){}[[]]"));
+        assertTrue(validateBrackets.validateBracket("{}{Code}[Fellows](())"));
     }
 }

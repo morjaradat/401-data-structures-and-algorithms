@@ -34,9 +34,15 @@
 
 
 **AnimalShelter**
-- add two classes Cats and Dogs that extends from animal and in the animal shhter calss we create two queue with type dog and cat and enqueue and dequeue for each one 
+- add two classes Cats and Dogs that extends from animal and in the animal shutter class we create two queue with type dog and cat and enqueue and dequeue for each one 
+
+**ValidateBrackets**
+- create a method that check if the open or close bracket missing if it's missing it's will return false else return true
 # Whiteboard Process
 
 ![img](./challenge11.jpg)
 
 ![img](./challenge12.jpg)
+
+![img](./challenge13.jpg)
+

@@ -5,6 +5,7 @@
 import Type.PseudoQueue;
 import Type.Queue;
 import Type.Stack;
+import stack_queue_brackets.validateBrackets;
 
 public class App {
 
@@ -12,17 +13,33 @@ public class App {
         Stack<Integer> stack= new Stack<>();
         PseudoQueue<Integer> pseudoQueue = new PseudoQueue<>();
 
-        pseudoQueue.enqueue(10);
-        pseudoQueue.enqueue(11);
-        pseudoQueue.enqueue(12);
-        pseudoQueue.enqueue(13);
-        pseudoQueue.enqueue(14);
-        pseudoQueue.enqueue(15);
+        validateBrackets validateBrackets = new validateBrackets();
 
-        System.out.println(pseudoQueue.getSize());
-        System.out.println(pseudoQueue.toSting());
-        System.out.println(pseudoQueue.dequeue());
-        System.out.println(pseudoQueue.toSting());
+        System.out.println(validateBrackets.validateBracket("]{(})["));
+        System.out.println(validateBrackets.validateBracket("({}]["));
+        System.out.println(validateBrackets.validateBracket("[({}]"));
+        System.out.println(validateBrackets.validateBracket("(]("));
+        System.out.println(validateBrackets.validateBracket("{(}[)"));
+
+        System.out.println("---------------------------");
+        System.out.println(validateBrackets.validateBracket("{}"));
+        System.out.println(validateBrackets.validateBracket("{}(){}"));
+        System.out.println(validateBrackets.validateBracket("()[[Extra Characters]]"));
+        System.out.println(validateBrackets.validateBracket("(){}[[]]"));
+        System.out.println(validateBrackets.validateBracket("{}{Code}[Fellows](())"));
+
+
+    //        pseudoQueue.enqueue(10);
+//        pseudoQueue.enqueue(11);
+//        pseudoQueue.enqueue(12);
+//        pseudoQueue.enqueue(13);
+//        pseudoQueue.enqueue(14);
+//        pseudoQueue.enqueue(15);
+//
+//        System.out.println(pseudoQueue.getSize());
+//        System.out.println(pseudoQueue.toSting());
+//        System.out.println(pseudoQueue.dequeue());
+//        System.out.println(pseudoQueue.toSting());
 //        System.out.println(pseudoQueue.peek());
 //        stack.push(1);
 //        stack.push(2);
