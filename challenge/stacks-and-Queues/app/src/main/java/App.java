@@ -14,19 +14,28 @@ public class App {
         PseudoQueue<Integer> pseudoQueue = new PseudoQueue<>();
 
         validateBrackets validateBrackets = new validateBrackets();
-
-        System.out.println(validateBrackets.validateBracket("]{(})["));
-        System.out.println(validateBrackets.validateBracket("({}]["));
-        System.out.println(validateBrackets.validateBracket("[({}]"));
-        System.out.println(validateBrackets.validateBracket("(]("));
-        System.out.println(validateBrackets.validateBracket("{(}[)"));
-
-        System.out.println("---------------------------");
-        System.out.println(validateBrackets.validateBracket("{}"));
-        System.out.println(validateBrackets.validateBracket("{}(){}"));
-        System.out.println(validateBrackets.validateBracket("()[[Extra Characters]]"));
-        System.out.println(validateBrackets.validateBracket("(){}[[]]"));
-        System.out.println(validateBrackets.validateBracket("{}{Code}[Fellows](())"));
+        stack.push(1);
+        stack.push(88);
+        stack.push(3);
+        stack.push(4);
+        stack.push(15);
+        stack.push(8);
+        stack.push(4);
+        stack.push(20);
+        System.out.println(stack.getMax());
+        System.out.println(stack);
+//        System.out.println(validateBrackets.validateBracket("]{(})["));
+//        System.out.println(validateBrackets.validateBracket("({}]["));
+//        System.out.println(validateBrackets.validateBracket("[({}]"));
+//        System.out.println(validateBrackets.validateBracket("(]("));
+//        System.out.println(validateBrackets.validateBracket("{(}[)"));
+//
+//        System.out.println("---------------------------");
+//        System.out.println(validateBrackets.validateBracket("{}"));
+//        System.out.println(validateBrackets.validateBracket("{}(){}"));
+//        System.out.println(validateBrackets.validateBracket("()[[Extra Characters]]"));
+//        System.out.println(validateBrackets.validateBracket("(){}[[]]"));
+//        System.out.println(validateBrackets.validateBracket("{}{Code}[Fellows](())"));
 
 
     //        pseudoQueue.enqueue(10);

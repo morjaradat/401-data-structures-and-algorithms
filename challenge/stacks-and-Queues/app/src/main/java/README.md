@@ -38,6 +38,9 @@
 
 **ValidateBrackets**
 - create a method that check if the open or close bracket missing if it's missing it's will return false else return true
+
+**Get Max Value**
+- create a methode that return the max value exist in the stack 
 # Whiteboard Process
 
 ![img](./challenge11.jpg)
@@ -45,4 +48,6 @@
 ![img](./challenge12.jpg)
 
 ![img](./challenge13.jpg)
+
+![img](./challenge14.jpg)
 

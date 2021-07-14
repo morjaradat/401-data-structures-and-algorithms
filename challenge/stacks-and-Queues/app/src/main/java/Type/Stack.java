@@ -2,15 +2,18 @@ package Type;
 
 import data.Node;
 
+import java.util.List;
+
 public class Stack<T> {
     private Node<T> top;
+
 
     public Stack() {
         this.top = null;
     }
 
     public void push(T data) {
-        Node<T> node = new Node<>(data);
+        Node<T> node = new Node<T>(data);
         Node<T> temp = top;
         top = node;
         top.setNext(temp);
@@ -43,11 +46,9 @@ public class Stack<T> {
         return (T) top.getData();
     }
 
-
     public boolean isEmpty() {
         return top == null;
     }
-
 
     public String toString() {
         Node<T> current = top;
@@ -61,5 +62,20 @@ public class Stack<T> {
         }
         showList.append("NULL");
         return showList.toString();
+    }
+
+    public int getMax(){
+        int max =0 ;
+        Node<T> temp = top;
+        while (temp!=null){
+            if ((int)temp.getData()>max){
+                max = (int)temp.getData();
+            }
+
+            temp=temp.getNext();
+        }
+
+        return max;
+
     }
 }
