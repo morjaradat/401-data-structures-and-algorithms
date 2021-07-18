@@ -15,7 +15,7 @@ public class App {
 
         validateBrackets validateBrackets = new validateBrackets();
         stack.push(1);
-        stack.push(88);
+
         stack.push(3);
         stack.push(4);
         stack.push(15);

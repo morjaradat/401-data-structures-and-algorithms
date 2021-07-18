@@ -7,6 +7,8 @@
 | array-binary-search  | [whiteBoard](./challenge/array-binary-search/array-binary-search.jpg)  |[code](./challenge/array-binary-search/Main.java)
 | stacks-and-Queues-and-PseudoQueue  | Read  |[ReadMe](./challenge/stacks-and-Queues/app/src/main/java/README.md)
 | LinkedList | Read  |[ReadMe](./challenge/linked-list/ReadMe.md)
+| Tree  | tree  |[ReadMe](./challenge/Tree/README.md)
 | ------  | -----------  |------------
+
 
 
