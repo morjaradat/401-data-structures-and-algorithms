@@ -3,7 +3,8 @@
 
 ## Challenge
 <!-- Description of the challenge -->
-Build all trees classes and methods from scratch
+- Build all trees classes and methods from scratch
+
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -36,3 +37,26 @@ Build all trees classes and methods from scratch
 - traverse() get your root and start for cat in half a tree to insert your data inet
 - contains() to get a boolean true or false after search in your tree
 - traverseContain() reserve a root and data to start search
+
+# Challenge Summary
+<!-- Description of the challenge -->
+- create a method that return the max number in binary tree
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![img](./challenge16.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- my approach is using recursion ,why ? because its have better Bio O and faster 
+- Big O  of O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action --> 
+
+1. get clone the repo 
+2. cd to challenge/tree
+3. gradlew run 
+4. gradlew test  for GetMaxTest

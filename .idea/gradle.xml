@@ -4,6 +4,50 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/challenge/Tree" />
+        <option name="gradleHome" value="C:/Gradle/gradle-7.1" />
+        <option name="gradleJvm" value="11 (WSL)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/challenge/Tree" />
+            <option value="$PROJECT_DIR$/challenge/Tree/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/challenge/linked-list" />
+        <option name="gradleHome" value="C:/Gradle/gradle-7.1" />
+        <option name="gradleJvm" value="11 (WSL)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/challenge/linked-list" />
+            <option value="$PROJECT_DIR$/challenge/linked-list/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/challenge/stacks-and-Queues" />
+        <option name="gradleHome" value="C:/Gradle/gradle-7.1" />
+        <option name="gradleJvm" value="11 (WSL)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/challenge/stacks-and-Queues" />
+            <option value="$PROJECT_DIR$/challenge/stacks-and-Queues/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/linked-list" />
         <option name="gradleHome" value="C:/Gradle/gradle-7.1" />
@@ -15,6 +59,8 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/stacks-and-Queues" />
         <option name="gradleHome" value="C:/Gradle/gradle-7.1" />
