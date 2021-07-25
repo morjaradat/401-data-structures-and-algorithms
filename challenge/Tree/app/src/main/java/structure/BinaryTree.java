@@ -5,6 +5,7 @@ import data.Node;
 public class BinaryTree  {
     Node root;
     StringBuilder dataOfBinaryTree = new StringBuilder();
+    private int max=0;
 
 
     public boolean isEmpty(){
@@ -38,6 +39,30 @@ public class BinaryTree  {
             preOrderTraverse(node.getRight());
         }
         return dataOfBinaryTree.toString();
+    }
+
+    public Number getMax(){
+        if (root!=null){
+           max = (int) travel(root);
+        }
+        return max;
+    }
+
+    public Number travel(Node node){
+        if (node.getRight()==null&&node.getLeft()==null){
+            if (node.getKey()>max){
+                max= node.getKey();
+            }
+        }
+
+        if (node.getRight()!=null){
+            travel(node.getRight());
+        }
+        if (node.getLeft()!=null){
+            travel(node.getLeft());
+        }
+
+        return max;
     }
 
     public Node getRoot() {
