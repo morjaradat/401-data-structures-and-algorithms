@@ -18,7 +18,7 @@
 - insertAfter : take two parameters the value that will insert after and the new data ,will add the new data after teh value 
 - insertBefore : take two parameters the value that will insert before and the new data ,will add the new data before teh value 
 - kthFromEnd : will return the value when we start count from the end
-- I don't do it yet - zipLists insert in it 2 list, and it will merge them, start form list one to list two and zipListsInsert reserve each node form 2 list and start throw of list like a chain intel get end of node
+- I don't do it yet - zipLists insert in it 2 list, and it will merge them, start form list one to list two and zipListsInsert reserve each QNode form 2 list and start throw of list like a chain intel get end of QNode
 - reverse  : take a linkedList and return it reversed 
 - palindrome : check if the first half of the array matches the second half of the array if it matches return true else return false 
 - toString : build in method to print the data in class

@@ -8,7 +8,7 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- Create a Node class that has properties for the data stored in the node, the left child node, and the right child node.
+- Create a Node class that has properties for the data stored in the QNode, the left child QNode, and the right child QNode.
 
 - Create a BinaryTree class ,define a method for each of the depth first traversals called :
   1.inOrderTraverse
@@ -17,7 +17,7 @@
 
 - returns an array of the values, ordered appropriately.
   
-- Create a BinarySearchTree class define a method named add that accepts a new node.
+- Create a BinarySearchTree class define a method named add that accepts a new QNode.
 - add data in the correct location in the binary search tree
 - define a method named contains that accepts a data, and returns a boolean indicating whether the data is in the tree at least once.
 
@@ -26,7 +26,7 @@
 1. Class BinaryTree
 
 - getRoot() to get your root
-- setRoot() to set your root and insert a node inet
+- setRoot() to set your root and insert a QNode inet
 - inOrderTraverse() ordered by : left-root-right
 - postOrderTraverse() ordered by : root-left-right
 - preOrderTraverse() ordered by : left-right-root
@@ -60,3 +60,26 @@
 2. cd to challenge/tree
 3. gradlew run 
 4. gradlew test  for GetMaxTest
+
+# Challenge Summary
+<!-- Description of the challenge -->
+- create a method that return list that have the data of the tree arrangement by breadth first (by levels)
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![img](./challenge17.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- my approach is using Queue ,why ? because its was the best choose
+- Big O  of O(n2)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action --> 
+
+1. get clone the repo
+2. cd to challenge/tree
+3. gradlew run
+4. gradlew test  for breadthFirstTest
