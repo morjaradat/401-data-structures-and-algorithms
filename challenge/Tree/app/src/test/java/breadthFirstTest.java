@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 public class breadthFirstTest {
     @Test
-    public void getBreadthFirst(){
+    public void emptyTree(){
         BinaryTree binaryTree = new BinaryTree();
         List<Integer> list = new ArrayList<>();
         assertEquals(list,binaryTree.breadthFirst(binaryTree));
@@ -21,11 +21,12 @@ public class breadthFirstTest {
         binaryTree.getRoot().getRight().setLeft(new Node(15));
         binaryTree.getRoot().getRight().setRight(new Node(44));
         binaryTree.getRoot().getRight().getRight().setRight(new Node(65));
-        assertEquals("[1, 3, 15, 44, 65]",binaryTree.breadthFirst(binaryTree));
+        List<Integer> list = binaryTree.breadthFirst(binaryTree);
+        assertEquals("[1, 3, 15, 44, 65]",list.toString());
     }
 
     @Test
-    public void getMax(){
+    public void tree(){
         BinaryTree binaryTree = new BinaryTree();
 
         binaryTree.setRoot(new Node(1));
@@ -40,6 +41,7 @@ public class breadthFirstTest {
 
         binaryTree.getRoot().getLeft().getLeft().setLeft(new Node(5));
         binaryTree.getRoot().getLeft().getLeft().setRight(new Node(10));
-        assertEquals("[1, 2, 3, 4, 15, 44, 5, 10, 65]",binaryTree.breadthFirst(binaryTree));
+        List<Integer> list = binaryTree.breadthFirst(binaryTree);
+        assertEquals("[1, 2, 3, 4, 15, 44, 5, 10, 65]",list.toString());
     }
 }
