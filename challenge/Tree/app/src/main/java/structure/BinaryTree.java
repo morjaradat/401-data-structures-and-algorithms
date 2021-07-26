@@ -43,17 +43,16 @@ public class BinaryTree  {
 
     public Number getMax(){
         if (root!=null){
+            max = root.getKey();
            max = (int) travel(root);
         }
         return max;
     }
 
-    public Number travel(Node node){
-        if (node.getRight()==null&&node.getLeft()==null){
+    private Number travel(Node node){
             if (node.getKey()>max){
                 max= node.getKey();
             }
-        }
 
         if (node.getRight()!=null){
             travel(node.getRight());

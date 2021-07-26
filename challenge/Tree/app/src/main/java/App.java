@@ -21,8 +21,8 @@ public class App {
         binaryTree.getRoot().getLeft().setLeft(new Node(4));
 
         binaryTree.getRoot().getRight().setLeft(new Node(15));
-        binaryTree.getRoot().getRight().setRight(new Node(44));
-        binaryTree.getRoot().getRight().getRight().setRight(new Node(65));
+        binaryTree.getRoot().getRight().setRight(new Node(66));
+        binaryTree.getRoot().getRight().getRight().setRight(new Node(10));
 
 
         binaryTree.getRoot().getLeft().getLeft().setLeft(new Node(5));
