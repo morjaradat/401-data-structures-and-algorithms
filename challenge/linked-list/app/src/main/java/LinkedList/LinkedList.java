@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class linkedList<T> {
+public class LinkedList<T> {
     Node<T> head;
     int size = 0;
 
@@ -123,9 +123,27 @@ public class linkedList<T> {
 
     }
 
-//    public linkedList<T> zipLists(linkedList list1,linkedList list2){
-//
-//    }
+    public LinkedList<T> zipLists(LinkedList<T> list1, LinkedList<T> List2) {
+        if (list1.head != null && List2.head != null) {
+            list1.head = ListsZipper(list1.head, List2.head);
+            return list1;
+        } else {
+            return null;
+        }
+    }
+
+    private Node<T> ListsZipper(Node<T> node1, Node<T> node2) {
+        if (node1 == null) {
+            return node2;
+        } else if (node2 == null) {
+            return node1;
+        } else {
+            Node<T> mergeNode = ListsZipper(node1.getNext(), node2.getNext());
+            node2.setNext(mergeNode);
+            node1.setNext(node2);
+            return node1;
+        }
+    }
 
     public int getSize() {
         return size;
@@ -177,7 +195,7 @@ public class linkedList<T> {
         return null;
     }
 
-    public linkedList<T> reverse(linkedList<T> list) {
+    public LinkedList<T> reverse(LinkedList<T> list) {
         int length = size;
         Node<T> current = this.head;
         T lastNode = list.getValue(length - 1);
@@ -204,7 +222,7 @@ public class linkedList<T> {
 //
 //    }
 
-    public boolean palindrome(linkedList<T> array) {
+    public boolean palindrome(LinkedList<T> array) {
 //        linkedList<T> reversedArray= array.reverse(array);
         for (int i = 0; i < size; i++) {
             if (array.getValue(i) == array.getValue(size - 1 - i)) {

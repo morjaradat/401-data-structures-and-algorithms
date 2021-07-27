@@ -8,18 +8,24 @@ public class App {
     public static void main(String[] args) {
 
 //        System.out.println("hello ");
-          linkedList<Object> link = new linkedList<>();
+          LinkedList<Integer> link = new LinkedList<Integer>();
+          LinkedList<Integer> link2 = new LinkedList<Integer>();
 //        linkedList<Integer> ll = new linkedList<>();
 
         link.append(11);
         link.append(12);
         link.append(13);
-        link.append("MMM");
 
-        link.insertBefore(11,14);
-        link.insertBefore(12,15);
-        link.insertBefore("MMM",15);
-        link.insertBefore(13,100);
+
+        link2.append(15);
+        link2.append(16);
+        link2.append(17);
+
+        System.out.println(link.zipLists(link,link2));
+
+//        link.insertBefore(11,14);
+//        link.insertBefore(12,15);
+//        link.insertBefore(13,100);
 //
 //        link.insertAfter(11,100);
 //        link.insertAfter(100,99);
@@ -37,17 +43,17 @@ public class App {
 //        link.insertAtEnd(13);
 //        link.insertAtEnd(10);
 
-        link.insertAtEnd("m");
-        link.insertAtEnd("o");
-        link.insertAtEnd("o");
-        link.insertAtEnd("m");
+//        link.insertAtEnd("m");
+//        link.insertAtEnd("o");
+//        link.insertAtEnd("o");
+//        link.insertAtEnd("m");
 
 
-        System.out.println(link);
-
-        System.out.println("reverse Array " +link.reverse(link));
-
-        System.out.println("is the array palindrome => " +link.palindrome(link));
+//        System.out.println(link);
+//
+//        System.out.println("reverse Array " +link.reverse(link));
+//
+//        System.out.println("is the array palindrome => " +link.palindrome(link));
 //
 //        System.out.println(link);
 
