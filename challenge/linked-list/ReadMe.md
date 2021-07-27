@@ -27,3 +27,6 @@
 ![img](./challenge-06.jpg)
 
 ![img](./challenge-07.jpg)
+
+![img](./challenge-08.jpg)
+

@@ -3,7 +3,7 @@
  */
 package linked.list;
 
-import LinkedList.linkedList;
+import LinkedList.LinkedList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,23 +14,23 @@ public class AppTest {
      */
 
     @Test public void CreateAnLinkedList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         assertEquals("Linked list is empty", link.toString());
     }
     @Test public void insert() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.append(10);
         assertEquals("{10}-> NULL", link.toString());
     }
     @Test public void MultipleInsert() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.append(10);
         link.append(10);
         link.append(10);
         assertEquals("{10}-> {10}-> {10}-> NULL", link.toString());
     }
     @Test public void testLinkedListIncludesTrue() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.append(10);
         link.append(11);
         link.append(12);
@@ -38,14 +38,14 @@ public class AppTest {
     }
 
     @Test public void testLinkedListIncludesFalse() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.append(10);
         link.append(11);
         link.append(12);
         assertEquals(false, link.includes(20));
     }
     @Test public void collectionOfAllValue() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.append(10);
         link.append(11);
         link.append(12);
@@ -58,20 +58,20 @@ public class AppTest {
      */
 
     @Test public void insertToTheEndOfList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
 
         assertEquals("{10}-> NULL", link.toString());
     }
     @Test public void insertMultipleToTheList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
         assertEquals("{10}-> {11}-> {12}-> NULL", link.toString());
     }
     @Test public void insertBeforeTheMiddleOfList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -80,7 +80,7 @@ public class AppTest {
         assertEquals("{10}-> {20}-> {11}-> {12}-> {13}-> NULL", link.toString());
     }
     @Test public void insertBeforeTheFirstOfList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -89,7 +89,7 @@ public class AppTest {
         assertEquals("{20}-> {10}-> {11}-> {12}-> {13}-> NULL", link.toString());
     }
     @Test public void insertAfterTheMiddleOfList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -98,7 +98,7 @@ public class AppTest {
         assertEquals("{10}-> {11}-> {20}-> {12}-> {13}-> NULL", link.toString());
     }
     @Test public void insertAfterTheLastNodeList() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -112,7 +112,7 @@ public class AppTest {
      */
 
     @Test public void k_AreGraterThanTheLength() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -120,7 +120,7 @@ public class AppTest {
         assertEquals("Out of Bonds", link.kthFromEnd(10));
     }
     @Test public void k_AreEqualToTheLength() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -128,7 +128,7 @@ public class AppTest {
         assertEquals(10, link.kthFromEnd(3));
     }
     @Test public void k_AreNotPositiveInteger() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -136,12 +136,12 @@ public class AppTest {
         assertEquals("Out of Bonds", link.kthFromEnd(-20));
     }
     @Test public void LinkedListOfSizeOne() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         assertEquals(10, link.kthFromEnd(0));
     }
     @Test public void k_IsInTheMiddle() {
-        linkedList<Object> link = new linkedList<>();
+        LinkedList<Object> link = new LinkedList<>();
         link.insertAtEnd(10);
         link.insertAtEnd(11);
         link.insertAtEnd(12);
@@ -150,4 +150,66 @@ public class AppTest {
         link.insertAtEnd(15);
         assertEquals(12, link.kthFromEnd(3));
     }
+
+    /**
+     * Code Challenge: Class 08
+     */
+
+    @Test
+    public void testLinkedListZipListsNormal() {
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        LinkedList<Integer> link2 = new LinkedList<Integer>();
+        link.append(1);
+        link.append(3);
+        link.append(2);
+
+        link2.append(5);
+        link2.append(6);
+        link2.append(7);
+
+        link.zipLists(link,link2);
+        assertEquals("{1}-> {5}-> {3}-> {6}-> {2}-> {7}-> NULL",link.toString() );
+    }
+
+    @Test
+    public void testLinkedListZipListsShorterListOne() {
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        LinkedList<Integer> link2 = new LinkedList<Integer>();
+        link.append(1);
+        link.append(3);
+        link.append(2);
+
+        link2.append(5);
+        link2.append(6);
+
+        link.zipLists(link,link2);
+        assertEquals("{1}-> {5}-> {3}-> {6}-> {2}-> NULL", link.toString());
+    }
+
+    @Test
+    public void testLinkedListZipListsShorterListTwo() {
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        LinkedList<Integer> link2 = new LinkedList<Integer>();
+        link.append(1);
+        link.append(3);
+
+        link2.append(5);
+        link2.append(6);
+        link2.append(2);
+
+        link.zipLists(link,link2);
+        assertEquals("{1}-> {5}-> {3}-> {6}-> {2}-> NULL", link.toString());
+    }
+    @Test
+    public void testLinkedListZipListsOneAreEmpty() {
+        LinkedList<Integer> link = new LinkedList<Integer>();
+        LinkedList<Integer> link2 = new LinkedList<Integer>();
+        link.append(1);
+        link.append(3);
+
+
+        link.zipLists(link,link2);
+        assertEquals("{1}-> {3}-> NULL", link.toString());
+    }
+
 }
