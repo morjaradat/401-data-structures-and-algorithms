@@ -18,7 +18,7 @@ public class AppTest {
      */
     @Test
     public void emptyTree() {
-        BinaryTree binaryTree = new BinaryTree();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
         assertTrue(binaryTree.isEmpty());
     }
 
@@ -28,9 +28,9 @@ public class AppTest {
 
     @Test
     public void insertOne() {
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.setRoot(new Node(5));
-        assertEquals(5, binaryTree.getRoot().getKey());
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(5));
+        assertEquals(5, (int)binaryTree.getRoot().getKey());
     }
 
       /*
@@ -39,12 +39,12 @@ public class AppTest {
 
 @Test
     public void AddLeftAndRight(){
-    BinaryTree binaryTree = new BinaryTree();
-    binaryTree.setRoot(new Node(5));
-    binaryTree.getRoot().setLeft(new Node(2));
-    binaryTree.getRoot().setRight(new Node(3));
-    assertEquals(2, binaryTree.getRoot().getLeft().getKey());
-    assertEquals(3, binaryTree.getRoot().getRight().getKey());
+    BinaryTree<Integer> binaryTree = new BinaryTree<>();
+    binaryTree.setRoot(new Node<>(5));
+    binaryTree.getRoot().setLeft(new Node<>(2));
+    binaryTree.getRoot().setRight(new Node<>(3));
+    assertEquals(2, (int)binaryTree.getRoot().getLeft().getKey());
+    assertEquals(3,(int) binaryTree.getRoot().getRight().getKey());
 
 }
 
@@ -54,10 +54,10 @@ public class AppTest {
 
     @Test
     public void PreOrder(){
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.setRoot(new Node(5));
-        binaryTree.getRoot().setLeft(new Node(2));
-        binaryTree.getRoot().setRight(new Node(3));
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(5));
+        binaryTree.getRoot().setLeft(new Node<>(2));
+        binaryTree.getRoot().setRight(new Node<>(3));
        assertEquals("5 2 3 ",binaryTree.preOrderTraverse(binaryTree.getRoot()));
     }
 
@@ -67,10 +67,10 @@ public class AppTest {
 
     @Test
     public void inOrder(){
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.setRoot(new Node(5));
-        binaryTree.getRoot().setLeft(new Node(2));
-        binaryTree.getRoot().setRight(new Node(3));
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(5));
+        binaryTree.getRoot().setLeft(new Node<>(2));
+        binaryTree.getRoot().setRight(new Node<>(3));
         assertEquals("2 5 3 ",binaryTree.inOrderTraverse(binaryTree.getRoot()));
 
         /*
@@ -79,10 +79,10 @@ public class AppTest {
 
     }@Test
     public void postOrder (){
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.setRoot(new Node(5));
-        binaryTree.getRoot().setLeft(new Node(2));
-        binaryTree.getRoot().setRight(new Node(3));
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.setRoot(new Node<>(5));
+        binaryTree.getRoot().setLeft(new Node<>(2));
+        binaryTree.getRoot().setRight(new Node<>(3));
         assertEquals("2 3 5 ",binaryTree.postOrderTraverse(binaryTree.getRoot()));
     }
 
@@ -94,7 +94,7 @@ public class AppTest {
     */
     @Test
     public void emptySearchTree() {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         assertTrue(binarySearchTree.isEmpty());
     }
 
@@ -104,9 +104,9 @@ public class AppTest {
 
     @Test
     public void insertOneBinarySearchTree() {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.add(5);
-        assertEquals(5, binarySearchTree.getRoot().getKey());
+        assertEquals(5, (int)binarySearchTree.getRoot().getKey());
     }
 
        /*
@@ -115,7 +115,7 @@ public class AppTest {
 
     @Test
     public void PreOrderBinarySearchTree(){
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.add(5);
         binarySearchTree.add(10);
         binarySearchTree.add(2);
@@ -128,7 +128,7 @@ public class AppTest {
 
     @Test
     public void inOrderBinarySearchTree(){
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.add(5);
         binarySearchTree.add(10);
         binarySearchTree.add(2);
@@ -139,7 +139,7 @@ public class AppTest {
 
     }@Test
     public void postOrderBinarySearchTree(){
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.add(5);
         binarySearchTree.add(10);
         binarySearchTree.add(2);

@@ -3,7 +3,6 @@
  */
 
 import data.Node;
-import queue.Queue;
 import structure.BinaryTree;
 
 public class App {
@@ -11,23 +10,23 @@ public class App {
     public static void main(String[] args) {
         System.out.println("test");
 
-        BinaryTree binaryTree = new BinaryTree();
-        BinaryTree binaryTree2 = new BinaryTree();
-        Queue<Node> queue = new Queue<>();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        BinaryTree<Integer> binaryTree2 = new BinaryTree<>();
+//        Queue<Node> queue = new Queue<>();
 
 
         // adds nodes to the tree
-        binaryTree.setRoot(new Node(1));
-        binaryTree.getRoot().setLeft(new Node(2));
-        binaryTree.getRoot().setRight(new Node(3));
+        binaryTree.setRoot(new Node<>(1));
+        binaryTree.getRoot().setLeft(new Node<>(2));
+        binaryTree.getRoot().setRight(new Node<>(3));
 
         //left
-        binaryTree.getRoot().getLeft().setLeft(new Node(4));
+        binaryTree.getRoot().getLeft().setLeft(new Node<>(4));
 
 
         //right
-        binaryTree.getRoot().getRight().setLeft(new Node(15));
-        binaryTree.getRoot().getRight().setRight(new Node(66));
+        binaryTree.getRoot().getRight().setLeft(new Node<>(15));
+        binaryTree.getRoot().getRight().setRight(new Node<>(66));
 
 
 //        binaryTree.getRoot().getRight().getRight().setRight(new Node(10));
@@ -35,7 +34,8 @@ public class App {
 //        binaryTree.getRoot().getLeft().getLeft().setRight(new Node(10));
 
 
-        System.out.println(binaryTree2.breadthFirst(binaryTree));
+//        System.out.println(binaryTree2.breadthFirst(binaryTree));
+        System.out.println(binaryTree.fizzBzzTree(binaryTree));
 
 
 //        System.out.println(binaryTree.getMax());
