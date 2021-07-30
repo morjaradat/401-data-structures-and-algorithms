@@ -4,6 +4,7 @@ import data.Node;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>{
     Node<T> root;
+    private int sumOfOddNumber;
 
     @Override
     public Node<T> getRoot() {
@@ -53,6 +54,29 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>{
 
     }
 
+    @Override
+    public Object getSumOfOddNumber() {
+        if (isEmpty()){
+            return ("The Tree are empty");
+        }else {
+//            sumOfOddNumber=(int)root.getKey();
+            getSumTravel(root);
+        }
+        return sumOfOddNumber;
+    }
+
+    private void getSumTravel(Node node) {
+
+        if ((int)(node.getKey())%2 != 0) {
+            sumOfOddNumber+= (int)node.getKey();
+        }
+        if (node.getRight() != null) {
+            getSumTravel(node.getRight());
+        }
+        if (node.getLeft() != null) {
+            getSumTravel(node.getLeft());
+        }
+    }
 
     public boolean traverseContain(Node<T> currentNode, T key) {
         if (currentNode == null) {

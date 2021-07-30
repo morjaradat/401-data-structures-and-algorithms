@@ -1,9 +1,12 @@
 package data;
 
+import java.util.Vector;
+
 public class Node<T> {
     private T key ;
     private Node<T> left;
     private Node<T> right;
+
 
     public Node() {
     }

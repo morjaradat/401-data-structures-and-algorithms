@@ -1,16 +1,16 @@
 package structure;
 
 import data.Node;
-
+import queue.Queue;
 
 import java.util.ArrayList;
 import java.util.List;
-import queue.Queue;
 
-public class BinaryTree<T extends  Comparable<T>> {
+public class BinaryTree<T extends Comparable<T>> {
     Node<T> root;
     StringBuilder dataOfBinaryTree = new StringBuilder();
     private T max = null;
+    private int sumOfOddNumber;
 
     public boolean isEmpty() {
         return root == null;
@@ -28,7 +28,7 @@ public class BinaryTree<T extends  Comparable<T>> {
     public String inOrderTraverse(Node<T> node) {
         if (node != null) {
             inOrderTraverse(node.getLeft());
-//            System.out.print(" " + node.getKey());
+            System.out.print(" " + node.getKey());
             dataOfBinaryTree.append(node.getKey()).append(" ");
             inOrderTraverse(node.getRight());
         }
@@ -47,7 +47,7 @@ public class BinaryTree<T extends  Comparable<T>> {
 
     public T getMax() {
         if (root != null) {
-            max =  root.getKey();
+            max = root.getKey();
             max = travel(root);
         }
         return max;
@@ -70,6 +70,9 @@ public class BinaryTree<T extends  Comparable<T>> {
     }
 
     public Node<T> getRoot() {
+        if (root == null) {
+            return null;
+        }
         return root;
     }
 
@@ -100,34 +103,67 @@ public class BinaryTree<T extends  Comparable<T>> {
     }
 
 
-    public BinaryTree<String> fizzBzzTree(BinaryTree<Integer> tree){
+    public BinaryTree<String> fizzBzzTree(BinaryTree<Integer> tree) {
+
         BinaryTree<String> newTree = new BinaryTree<>();
-        if (tree.getRoot()!=null){
-            fizzBzzTravel(tree.getRoot(),newTree.getRoot());
+        newTree.setRoot(new Node<>());
+
+        if (tree.getRoot() != null) {
+            fizzBzzTravel(tree.getRoot(), newTree.getRoot());
         }
-        return  newTree;
+        return newTree;
     }
 
-    private void fizzBzzTravel(Node<Integer> node , Node<String> newTree) {
+    private void fizzBzzTravel(Node<Integer> node, Node<String> newTreeRoot) {
 
-        if ((int)node.getKey()% 3==0 && (int)node.getKey()%5==0){
-            newTree.setKey("FizzBuzz");
-        }else if ((int)node.getKey()%5==0){
-            newTree.setKey("Buzz");
-        }else if ((int)node.getKey()%3==0){
-            newTree.setKey("Fizz");
-        }else {
-            newTree.setKey(node.getKey().toString());
+        if (node.getKey() % 3 == 0 && node.getKey() % 5 == 0) {
+            newTreeRoot.setKey("FizzBuzz");
+        } else if (node.getKey() % 5 == 0) {
+            newTreeRoot.setKey("Buzz");
+        } else if (node.getKey() % 3 == 0) {
+            newTreeRoot.setKey("Fizz");
+        } else {
+            String data = String.valueOf(node.getKey());
+            newTreeRoot.setKey(data);
         }
 
         if (node.getRight() != null) {
-            Node<String> newNode = newTree.getLeft();
-            fizzBzzTravel(node.getRight(),newNode);
+            newTreeRoot.setRight(new Node<>());
+            fizzBzzTravel(node.getRight(), newTreeRoot.getRight());
         }
         if (node.getLeft() != null) {
-            Node<String> newNode = newTree.getRight();
-            fizzBzzTravel(node.getLeft(),newNode);
+            newTreeRoot.setLeft(new Node<>());
+            fizzBzzTravel(node.getLeft(), newTreeRoot.getLeft());
         }
 
     }
+
+    public Object getSumOfOddNumber(){
+        if (isEmpty()) {
+            return ("The Tree are empty");
+        } else {
+//            sumOfOddNumber=(int)root.getKey();
+            getSumTravel(root);
+        }
+        return sumOfOddNumber;
+    }
+
+    private void getSumTravel(Node node) {
+
+        if ((int) (node.getKey()) % 2 != 0) {
+            sumOfOddNumber += (int) node.getKey();
+        }
+//        if (((int)node.getKey())%2 != 0) {
+//            sumOfOddNumber+= (int)node.getKey();
+//        }
+
+        if (node.getRight() != null) {
+            getSumTravel(node.getRight());
+        }
+        if (node.getLeft() != null) {
+            getSumTravel(node.getLeft());
+        }
+    }
+
+
 }

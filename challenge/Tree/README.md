@@ -83,3 +83,26 @@
 2. cd to challenge/tree
 3. gradlew run
 4. gradlew test  for breadthFirstTest
+
+# Challenge Summary
+<!-- Description of the challenge -->
+- create a method that return the summation of odd number in a tree
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![img](./challenge19.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- my approach is using recursion to check every node in the tree ,why ? because its was the best choose
+- Big O  of O(1)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action --> 
+
+1. get clone the repo
+2. cd to challenge/tree
+3. gradlew run
+4. gradlew test  for GetSumOfOddNumber
