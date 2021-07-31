@@ -2,19 +2,20 @@ package structure;
 
 import data.Node;
 
-public class BinarySearchTree extends BinaryTree{
-    Node root;
+public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>{
+    Node<T> root;
+    private int sumOfOddNumber;
 
     @Override
-    public Node getRoot() {
+    public Node<T> getRoot() {
         return root;
     }
 
-    public void add(int key) {
+    public void add(T key) {
         if (root == null) {
-            root = new Node(key);
+            root = new Node<T>(key);
         } else {
-            Node current = root;
+            Node<T> current = root;
             traverse(current, key);
         }
     }
@@ -23,17 +24,17 @@ public class BinarySearchTree extends BinaryTree{
     return root==null;
     }
 
-    private void traverse(Node current, int key) {
-        if (key > current.getKey()) {
+    private void traverse(Node<T> current, T key) {
+        if (key.compareTo(current.getKey())>0) {
             if (current.getRight() == null) {
-                current.setRight(new Node(key));
+                current.setRight(new Node<T>(key));
                 return;
             }
 
             current = current.getRight();
         } else {
             if (current.getLeft() == null) {
-                current.setLeft(new Node(key));
+                current.setLeft(new Node<T>(key));
                 return;
             }
 
@@ -42,23 +43,46 @@ public class BinarySearchTree extends BinaryTree{
         traverse(current, key);
     }
 
-    public boolean Contains(int key) {
+    public boolean Contains(T key) {
 
         if (root == null) {
             return false;
         } else {
-            Node current = root;
+            Node<T> current = root;
             return traverseContain(current, key);
         }
 
     }
 
+    @Override
+    public Object getSumOfOddNumber() {
+        if (isEmpty()){
+            return ("The Tree are empty");
+        }else {
+//            sumOfOddNumber=(int)root.getKey();
+            getSumTravel(root);
+        }
+        return sumOfOddNumber;
+    }
 
-    public boolean traverseContain(Node currentNode, int key) {
+    private void getSumTravel(Node node) {
+
+        if ((int)(node.getKey())%2 != 0) {
+            sumOfOddNumber+= (int)node.getKey();
+        }
+        if (node.getRight() != null) {
+            getSumTravel(node.getRight());
+        }
+        if (node.getLeft() != null) {
+            getSumTravel(node.getLeft());
+        }
+    }
+
+    public boolean traverseContain(Node<T> currentNode, T key) {
         if (currentNode == null) {
             return false;
         } else {
-            if (key > currentNode.getKey()) {
+            if (key.compareTo(currentNode.getKey()) >0 ) {
                 if (currentNode.getKey() == key) {
                     return true;
 

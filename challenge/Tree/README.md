@@ -83,3 +83,49 @@
 2. cd to challenge/tree
 3. gradlew run
 4. gradlew test  for breadthFirstTest
+
+# Challenge Summary
+<!-- Description of the challenge -->
+- Write a function called fizz buzz tree Arguments: k-ary tree Return: new k-ary tree Determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+
+- If the value is divisible by 3, replace the value with “Fizz” If the value is divisible by 5, replace the value with “Buzz” If the value is divisible by 3 and 5, replace the value with “FizzBuzz” If the value is not divisible by 3 or 5, simply turn the number into a String.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![img](./challenge18.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- Big O of Space is Big O of Time is
+## Solution
+<!-- Show how to run your code, and examples of it in action --> 
+
+1. get clone the repo
+2. cd to challenge/tree
+3. gradlew run
+4. gradlew test  for FizzBuzzTest
+
+# Challenge Summary
+<!-- Description of the challenge -->
+- create a method that return the summation of odd number in a tree
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![img](./challenge19.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- my approach is using recursion to check every node in the tree ,why ? because its was the best choose
+- Big O  of O(1)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action --> 
+
+1. get clone the repo
+2. cd to challenge/tree
+3. gradlew run
+4. gradlew test  for GetSumOfOddNumber
