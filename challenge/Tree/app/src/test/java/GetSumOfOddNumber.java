@@ -1,6 +1,5 @@
 
 import data.Node;
-import org.junit.Before;
 import org.junit.Test;
 import structure.BinarySearchTree;
 import structure.BinaryTree;
