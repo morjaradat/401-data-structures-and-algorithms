@@ -98,7 +98,7 @@
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-- Big O of Space is Big O of Time is
+- Big O of Space is Big O of Time is Big O(1)
 ## Solution
 <!-- Show how to run your code, and examples of it in action --> 
 
