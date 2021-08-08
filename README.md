@@ -8,7 +8,9 @@
 | stacks-and-Queues-and-PseudoQueue  | Read  |[ReadMe](./challenge/stacks-and-Queues/app/src/main/java/README.md)
 | LinkedList | Read  |[ReadMe](./challenge/linked-list/ReadMe.md)
 | Tree  | tree  |[ReadMe](./challenge/Tree/README.md)
-| ------  | -----------  |------------
+| Sort  | Sort  |[ReadMe](./challenge/sort/README.md)
+| Class 26 BLOG  | Class 26 BLOG  |[BLOG](./challenge/sort/BLOG.md)
+
 
 
 
