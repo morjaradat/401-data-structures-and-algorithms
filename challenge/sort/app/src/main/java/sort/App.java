@@ -15,5 +15,7 @@ public class App {
         System.out.println(Arrays.toString(sort.insertionSort(testArray)));
 
         System.out.println(Arrays.toString(sort.mergeSort(testArray)));
+
+        System.out.println(Arrays.toString(sort.quicksort(testArray,0,testArray.length-1)));
     }
 }
