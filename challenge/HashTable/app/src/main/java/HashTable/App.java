@@ -16,8 +16,8 @@ public class App {
 
         System.out.println("the size is "+ hashTables.getSize());
         System.out.println("the mohammad2 is "+ hashTables.get("mohammad1"));
-//        System.out.println("the delete is "+ hashTables.remove("mohammad2"));
-//        System.out.println("the size is "+ hashTables.getSize());
+        System.out.println("the delete is "+ hashTables.remove("mohammad2"));
+        System.out.println("the size is "+ hashTables.getSize());
 
 
     }
