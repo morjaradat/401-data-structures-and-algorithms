@@ -3,6 +3,8 @@
  */
 package HashTable;
 
+import RepeatedWord.RepeatedWord;
+
 public class App {
 
     public static void main(String[] args) {
@@ -19,6 +21,14 @@ public class App {
         System.out.println("the delete is "+ hashTables.remove("mohammad2"));
         System.out.println("the size is "+ hashTables.getSize());
 
+        RepeatedWord word = new RepeatedWord();
+
+        String text = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        String text1 = "";
+
+        System.out.println(word.repeatedWord(text1));
+
+//        System.out.println(word.repeatedWords(text));
 
     }
 }
