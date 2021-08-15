@@ -1,6 +1,6 @@
 package HashTable;
 
-import HashTable.LinkedList.LinkedList;
+import LinkedList.LinkedList;
 
 import java.util.Objects;
 
@@ -15,7 +15,7 @@ public class HashTables<K,V> {
      */
     public HashTables() {
 
-        bucketArray = new LinkedList<>();
+        bucketArray = new LinkedList<HashNode<K, V>>();
         numBucket = 10;
         size=0;
 
@@ -72,7 +72,7 @@ public class HashTables<K,V> {
     private void  resize(){
         if ((1.0*size)/ numBucket >=0.7){
             LinkedList<HashNode<K,V>> temp = bucketArray;
-            bucketArray = new LinkedList<>();
+            bucketArray = new LinkedList<HashNode<K, V>>();
             numBucket = 2 * numBucket;
             size=0;
             for (int index = 0; index < numBucket; index++) {

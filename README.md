@@ -13,3 +13,4 @@
 | Class 27 BLOG  | Class 27 BLOG  |[BLOG](./challenge/sort/BLOG-27.md)
 | Class 28 BLOG  | Class 28 BLOG  |[BLOG](./challenge/sort/BLOG-28.md)
 | Hash Table | Hash Table  |[ReadMe](./challenge/HashTable/README.md)
+| Hash Map | Hash Map  |[ReadMe](./challenge/HashTable/HashMap_README.md)

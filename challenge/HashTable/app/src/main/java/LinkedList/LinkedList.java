@@ -1,4 +1,4 @@
-package HashTable.LinkedList;
+package LinkedList;
 
 public class LinkedList<T> {
     private Node<T> head;
