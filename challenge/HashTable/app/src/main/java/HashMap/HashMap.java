@@ -49,6 +49,10 @@ public class HashMap<K, V> {
         return index;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     private int getIndex(K key) {
         return Math.abs(key.hashCode()) % array.length;
     }

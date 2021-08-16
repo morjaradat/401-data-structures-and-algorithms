@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class RepeatedWordTest {
+public class RepeatedWord_Test {
     RepeatedWord word;
     private String empty;
     private String oneWordRepeated;

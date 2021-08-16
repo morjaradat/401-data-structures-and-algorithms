@@ -13,6 +13,10 @@ public class ImplementHashMap<V> {
         return map.get((V) obj) != null;
     }
 
+    public int getSize() {
+        return map.getSize();
+    }
+
     @Override
     public String toString() {
         return map.toString();
