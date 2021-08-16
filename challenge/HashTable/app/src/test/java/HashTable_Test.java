@@ -95,4 +95,14 @@ public class HashTable_Test {
         foods.remove("Syria");
         assertNull(ages.get("Syria"));
     }
+
+    @Test
+    public void TestHashTableStringContain() {
+        assertTrue(foods.contain("Syria"));
+    }
+
+    @Test
+    public void TestHashTableNotStringContain() {
+        assertFalse(foods.contain("mmmm"));
+    }
 }

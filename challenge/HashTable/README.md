@@ -24,6 +24,7 @@ hashCode: returns an index in the collection based on an arbitrary key.
 * `remove()` remove the value from the table based on the key.
 * `hashCode()` returns an index in the collection based on an arbitrary key.
 * `resize()` specify a new hash table size
+* `contain()` check if the hashtable contain specific value.
 * `isEmpty()` check to see if the hash table is empty or not.
 
 ## WhiteBoard
