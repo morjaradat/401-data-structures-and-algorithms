@@ -29,6 +29,9 @@ public class HashTables<K,V> {
         return Objects.hashCode(key);
     }
 
+    public boolean contain(K key){
+        return get(key) != null ;
+    }
 
     private int getBucketIndex(K key){
         int hashCode = hashCode(key);
