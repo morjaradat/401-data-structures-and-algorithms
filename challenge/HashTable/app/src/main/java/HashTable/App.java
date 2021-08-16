@@ -3,30 +3,53 @@
  */
 package HashTable;
 
+import BinaryTree.BinarySearchTree;
+import HashMapTree.TreeHashMap;
 import RepeatedWord.RepeatedWord;
 
 public class App {
 
     public static void main(String[] args) {
         System.out.println("test");
-      HashTables<String,Integer> hashTables = new HashTables<>();
+      BinarySearchTree<Integer> tree_1 = new BinarySearchTree<Integer>();
+      BinarySearchTree<Integer> tree_2 = new BinarySearchTree<Integer>();
 
-      hashTables.add("mohammad1",10);
-      hashTables.add("mohammad2",20);
-      hashTables.add("mohammad3",30);
-      hashTables.add("mohammad4",40);
+      TreeHashMap treeHashMap = new TreeHashMap();
 
-        System.out.println("the size is "+ hashTables.getSize());
-        System.out.println("the mohammad2 is "+ hashTables.get("mohammad1"));
-        System.out.println("the delete is "+ hashTables.remove("mohammad2"));
-        System.out.println("the size is "+ hashTables.getSize());
+      tree_1.add(3);
+      tree_1.add(1);
+      tree_1.add(2);
+      tree_1.add(4);
+      tree_1.add(5);
+      tree_1.add(6);
 
-        RepeatedWord word = new RepeatedWord();
+      tree_2.add(0);
+      tree_2.add(10);
+      tree_2.add(15);
+      tree_2.add(53);
+      tree_2.add(2);
+      tree_2.add(6);
 
-        String text = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
-        String text1 = "";
+      System.out.println(treeHashMap.treeIntersection(tree_1,tree_2));;
 
-        System.out.println(word.repeatedWord(text1));
+//      HashTables<String,Integer> hashTables = new HashTables<>();
+//
+//      hashTables.add("mohammad1",10);
+//      hashTables.add("mohammad2",20);
+//      hashTables.add("mohammad3",30);
+//      hashTables.add("mohammad4",40);
+//
+//        System.out.println("the size is "+ hashTables.getSize());
+//        System.out.println("the mohammad2 is "+ hashTables.get("mohammad1"));
+//        System.out.println("the delete is "+ hashTables.remove("mohammad2"));
+//        System.out.println("the size is "+ hashTables.getSize());
+
+//        RepeatedWord word = new RepeatedWord();
+//
+//        String text = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+//        String text1 = "";
+//
+//        System.out.println(word.repeatedWord(text1));
 
 //        System.out.println(word.repeatedWords(text));
 

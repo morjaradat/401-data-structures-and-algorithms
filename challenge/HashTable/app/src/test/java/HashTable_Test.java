@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class AppTest {
+public class HashTable_Test {
     HashTables<String,Integer> emptyHashtable;
     HashTables<String,Integer> ages;
     HashTables<String,String> foods;
