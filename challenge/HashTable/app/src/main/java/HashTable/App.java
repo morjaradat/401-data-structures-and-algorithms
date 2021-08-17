@@ -4,34 +4,62 @@
 package HashTable;
 
 import BinaryTree.BinarySearchTree;
+import HashMap.HashMap;
 import HashMapTree.TreeHashMap;
+import LeftJoin.LeftJoin;
 import RepeatedWord.RepeatedWord;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class App {
 
     public static void main(String[] args) {
         System.out.println("test");
-      BinarySearchTree<Integer> tree_1 = new BinarySearchTree<Integer>();
-      BinarySearchTree<Integer> tree_2 = new BinarySearchTree<Integer>();
+//      BinarySearchTree<Integer> tree_1 = new BinarySearchTree<Integer>();
+//      BinarySearchTree<Integer> tree_2 = new BinarySearchTree<Integer>();
+//
+//      TreeHashMap treeHashMap = new TreeHashMap();
+//
+//      tree_1.add(3);
+//      tree_1.add(1);
+//      tree_1.add(2);
+//      tree_1.add(4);
+//      tree_1.add(5);
+//      tree_1.add(6);
+//
+//      tree_2.add(0);
+//      tree_2.add(10);
+//      tree_2.add(15);
+//      tree_2.add(53);
+//      tree_2.add(2);
+//      tree_2.add(6);
 
-      TreeHashMap treeHashMap = new TreeHashMap();
+//      System.out.println(treeHashMap.treeIntersection(tree_1,tree_2));;
 
-      tree_1.add(3);
-      tree_1.add(1);
-      tree_1.add(2);
-      tree_1.add(4);
-      tree_1.add(5);
-      tree_1.add(6);
+      LeftJoin leftJoin = new LeftJoin();
+      HashMap<String,String> map = new HashMap<String, String>();
+      HashMap<String,String> map2 = new HashMap<String, String>();
 
-      tree_2.add(0);
-      tree_2.add(10);
-      tree_2.add(15);
-      tree_2.add(53);
-      tree_2.add(2);
-      tree_2.add(6);
+      map.put("key1","value1");
+      map.put("key2","value2");
+      map.put("key3","value3");
+      map.put("key3","value4");
+      map.put("key4","value5");
 
-      System.out.println(treeHashMap.treeIntersection(tree_1,tree_2));;
+      map2.put("key21","value6");
+      map2.put("key354","value7");
+      map2.put("key3","value8");
+      map2.put("key4","value9");
 
+      List<String[]> list = leftJoin.leftJoin(map,map2);
+      for (String[] item : list){
+        System.out.println(Arrays.toString(item));
+      }
+
+//      System.out.println(leftJoin.leftJoin(map,map2));
+
+//      System.out.println(map.keySet());
 //      HashTables<String,Integer> hashTables = new HashTables<>();
 //
 //      hashTables.add("mohammad1",10);

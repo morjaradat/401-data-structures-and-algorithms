@@ -1,12 +1,28 @@
 package HashMap;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HashMap<K, V> {
     private MapNode<K, V>[] array;
     private int size;
 
     public HashMap() {
         array = new MapNode[10];
+    }
+
+
+    public List<K> keySet(){
+        List<K> keyList = new ArrayList<>();
+        for (MapNode<K,V> node : array){
+            if (node!=null){
+                if (node.getKey()!=null){
+                    keyList.add(node.getKey());
+                }
+            }
+        }
+        return keyList;
     }
 
     public V put(K key, V value) {
@@ -90,5 +106,8 @@ public class HashMap<K, V> {
 
         printArray.append("]");
         return printArray.toString();
+    }
+    public boolean contain(K key){
+        return get(key)!= null;
     }
 }
