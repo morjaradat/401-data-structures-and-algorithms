@@ -14,17 +14,19 @@ public class LeftJoin {
         List<String[]> result = new ArrayList<>();
 
         List<String> firstMapKeys = map1.keySet();
-        List<String> secondMapKeys = map2.keySet();
 
-        for (String key : firstMapKeys){
-            if (map2.contain(key)){
-                String[] newValue = {key,map1.get(key),map2.get(key)};
-                result.add(newValue);
-            }else {
-                String[] newValue = {key,map1.get(key),"NULL"};
-                result.add(newValue);
+        if (firstMapKeys.size()>0){
+            for (String key : firstMapKeys){
+                if (map2.contain(key)){
+                    String[] newValue = {key,map1.get(key),map2.get(key)};
+                    result.add(newValue);
+                }else {
+                    String[] newValue = {key,map1.get(key),"NULL"};
+                    result.add(newValue);
+                }
             }
         }
-      return result;
+
+      return (result != null) ? result : null ;
     }
 }
