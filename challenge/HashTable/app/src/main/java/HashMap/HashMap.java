@@ -12,6 +12,9 @@ public class HashMap<K, V> {
         array = new MapNode[10];
     }
 
+//public MapNode<K,V>[] getAllNodes(){
+//        return array;
+//}
 
     public List<K> keySet(){
         List<K> keyList = new ArrayList<>();

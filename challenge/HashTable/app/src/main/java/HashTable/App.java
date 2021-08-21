@@ -4,7 +4,7 @@
 package HashTable;
 
 import BinaryTree.BinarySearchTree;
-import HashMap.HashMap;
+import Graph.Graph;
 import HashMapTree.TreeHashMap;
 import LeftJoin.LeftJoin;
 import RepeatedWord.RepeatedWord;
@@ -37,25 +37,25 @@ public class App {
 
 //      System.out.println(treeHashMap.treeIntersection(tree_1,tree_2));;
 
-      LeftJoin leftJoin = new LeftJoin();
-      HashMap<String,String> map = new HashMap<String, String>();
-      HashMap<String,String> map2 = new HashMap<String, String>();
-
-      map.put("key1","value1");
-      map.put("key2","value2");
-      map.put("key3","value3");
-      map.put("key3","value4");
-      map.put("key4","value5");
-
-      map2.put("key21","value6");
-      map2.put("key354","value7");
-      map2.put("key3","value8");
-      map2.put("key4","value9");
-
-      List<String[]> list = leftJoin.leftJoin(map,map2);
-      for (String[] item : list){
-        System.out.println(Arrays.toString(item));
-      }
+//      LeftJoin leftJoin = new LeftJoin();
+//      HashMap<String,String> map = new HashMap<String, String>();
+//      HashMap<String,String> map2 = new HashMap<String, String>();
+//
+//      map.put("key1","value1");
+//      map.put("key2","value2");
+//      map.put("key3","value3");
+//      map.put("key3","value4");
+//      map.put("key4","value5");
+//
+//      map2.put("key21","value6");
+//      map2.put("key354","value7");
+//      map2.put("key3","value8");
+//      map2.put("key4","value9");
+//
+//      List<String[]> list = leftJoin.leftJoin(map,map2);
+//      for (String[] item : list){
+//        System.out.println(Arrays.toString(item));
+//      }
 
 //      System.out.println(leftJoin.leftJoin(map,map2));
 
@@ -80,6 +80,40 @@ public class App {
 //        System.out.println(word.repeatedWord(text1));
 
 //        System.out.println(word.repeatedWords(text));
+
+//      Graph<String> graph = new Graph<String>();
+//      graph.addNode("mor1");
+//      graph.addNode("mor2");
+//      graph.addNode("mor3");
+//
+//      graph.addEdge("mor1","mor2");
+//      graph.addEdge("mor1","mor3");
+//      graph.addEdge("mor2","mor3");
+//
+//      System.out.println(graph.print());
+//
+//        System.out.println(graph.getNode());
+//        System.out.println(graph.getNeighbors("mor1"));
+//        System.out.println(graph.getSize());
+
+        Graph<String> airports = new Graph<String>();
+        airports.addNode("Amman");
+        airports.addNode("Aqaba");
+        airports.addNode("Assab");
+        airports.addNode("Azraq");
+        airports.addNode("Dafyanah");
+        airports.addNode("Mafraq");
+
+        airports.addEdge("Amman", "Queen Alia International Airport");
+        airports.addEdge("Amman", "Amman Civil Airport");
+        airports.addEdge("Aqaba", "King Hussein International Airport");
+        airports.addEdge("Assab", "H-4 Air Base");
+        airports.addEdge("Azraq", "Muwaffaq Salti Air Base");
+        airports.addEdge("Dafyanah", "Prince Hassan Air Base");
+        airports.addEdge("Mafraq", "King Hussein Air Base");
+
+        System.out.println(airports.getSize());
+
 
     }
 }
