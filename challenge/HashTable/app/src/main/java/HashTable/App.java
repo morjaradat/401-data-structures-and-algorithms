@@ -85,34 +85,74 @@ public class App {
 //      graph.addNode("mor1");
 //      graph.addNode("mor2");
 //      graph.addNode("mor3");
+//      graph.addNode("mor4");
+//      graph.addNode("mor5");
+//      graph.addNode("mor6");
 //
 //      graph.addEdge("mor1","mor2");
-//      graph.addEdge("mor1","mor3");
-//      graph.addEdge("mor2","mor3");
 //
+//      graph.addEdge("mor2","mor3");
+//      graph.addEdge("mor2","mor4");
+//
+//      graph.addEdge("mor3","mor4");
+//      graph.addEdge("mor3","mor5");
+//      graph.addEdge("mor3","mor6");
+
+        Graph<String> test = new Graph<String>();
+    test.addNode("Pandora");
+    test.addNode("Arendelle");
+    test.addNode("Metroville");
+    test.addNode("Monstropolis");
+    test.addNode("Narnia");
+    test.addNode("Naboo");
+
+    test.addEdge("Pandora", "Arendelle");
+
+    test.addEdge("Arendelle", "Pandora");
+    test.addEdge("Arendelle", "Metroville");
+    test.addEdge("Arendelle", "Monstropolis");
+
+    test.addEdge("Metroville", "Arendelle");
+    test.addEdge("Metroville", "Monstropolis");
+    test.addEdge("Metroville", "Narnia");
+    test.addEdge("Metroville", "Naboo");
+
+    test.addEdge("Monstropolis", "Arendelle");
+    test.addEdge("Monstropolis", "Metroville");
+    test.addEdge("Monstropolis", "Naboo");
+
+    test.addEdge("Naboo", "Monstropolis");
+    test.addEdge("Naboo", "Metroville");
+    test.addEdge("Naboo", "Naboo");
+
+    test.addEdge("Narnia", "Naboo");
+    test.addEdge("Narnia", "Metroville");
+
+        System.out.println(test.breadthFirst("Pandora"));
+
 //      System.out.println(graph.print());
 //
 //        System.out.println(graph.getNode());
 //        System.out.println(graph.getNeighbors("mor1"));
 //        System.out.println(graph.getSize());
 
-        Graph<String> airports = new Graph<String>();
-        airports.addNode("Amman");
-        airports.addNode("Aqaba");
-        airports.addNode("Assab");
-        airports.addNode("Azraq");
-        airports.addNode("Dafyanah");
-        airports.addNode("Mafraq");
-
-        airports.addEdge("Amman", "Queen Alia International Airport");
-        airports.addEdge("Amman", "Amman Civil Airport");
-        airports.addEdge("Aqaba", "King Hussein International Airport");
-        airports.addEdge("Assab", "H-4 Air Base");
-        airports.addEdge("Azraq", "Muwaffaq Salti Air Base");
-        airports.addEdge("Dafyanah", "Prince Hassan Air Base");
-        airports.addEdge("Mafraq", "King Hussein Air Base");
-
-        System.out.println(airports.getSize());
+//        Graph<String> airports = new Graph<String>();
+//        airports.addNode("Amman");
+//        airports.addNode("Aqaba");
+//        airports.addNode("Assab");
+//        airports.addNode("Azraq");
+//        airports.addNode("Dafyanah");
+//        airports.addNode("Mafraq");
+//
+//        airports.addEdge("Amman", "Queen Alia International Airport");
+//        airports.addEdge("Amman", "Amman Civil Airport");
+//        airports.addEdge("Aqaba", "King Hussein International Airport");
+//        airports.addEdge("Assab", "H-4 Air Base");
+//        airports.addEdge("Azraq", "Muwaffaq Salti Air Base");
+//        airports.addEdge("Dafyanah", "Prince Hassan Air Base");
+//        airports.addEdge("Mafraq", "King Hussein Air Base");
+//
+//        System.out.println(airports.getSize());
 
 
     }

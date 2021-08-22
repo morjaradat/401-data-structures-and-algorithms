@@ -1,8 +1,11 @@
 package Graph;
 
 import HashMap.HashMap;
+import HashMap.ImplementHashMap;
 import LinkedList.LinkedList;
+import queue.Queue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Graph<V> {
@@ -51,6 +54,32 @@ public class Graph<V> {
     }
     public LinkedList<GraphNode<V>> getNeighbors(V data){
        return nodes.get(data);
+    }
+
+    public List<V> breadthFirst(V node){
+        if (!nodes.contain(node)) {
+            return null;
+        }
+        List<V> result = new ArrayList<>();
+        Queue<V> breadth = new Queue<>();
+        ImplementHashMap<V> visited = new ImplementHashMap<V>();
+
+        breadth.enqueue(node);
+        visited.add(node);
+
+        while (!breadth.isEmpty()){
+            V front = breadth.dequeue();
+            result.add(front);
+            LinkedList<GraphNode<V>> nodeChild =nodes.get(front);
+            for (int i = 0; i < nodeChild.getSize(); i++) {
+                GraphNode<V> edge = nodeChild.get(i);
+                if (!visited.contains(edge.getValue())) {
+                    breadth.enqueue(edge.getValue());
+                    visited.add(edge.getValue());
+                }
+            }
+        }
+        return result;
     }
 
 }
