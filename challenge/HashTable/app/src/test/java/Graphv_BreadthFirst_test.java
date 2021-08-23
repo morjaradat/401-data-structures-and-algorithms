@@ -1,19 +1,19 @@
-import Graph.Graph;
+import Graph.Graphv;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Graph_BreadthFirst_test {
-    Graph<Integer> empty;
-    Graph<String> airports;
-    Graph<Integer> busStops;
+public class Graphv_BreadthFirst_test {
+    Graphv<Integer,Integer> empty;
+    Graphv<String,Integer> airports;
+    Graphv<Integer,Integer> busStops;
 
     @Before
     public void init(){
 
-        empty = new Graph<Integer>();
-        airports = new Graph<String>();
+        empty = new Graphv<Integer,Integer>();
+        airports = new Graphv<String,Integer>();
         airports.addNode("Amman - Queen Alia International Airport");
         airports.addNode("Amman - Amman Civil Airport");
         airports.addNode("Aqaba - King Hussein International Airport");
@@ -82,7 +82,7 @@ public class Graph_BreadthFirst_test {
                 "Amman - Amman Civil Airport"
         );
 
-        busStops = new Graph<Integer>();
+        busStops = new Graphv<Integer,Integer>();
         busStops.addNode(1);
         busStops.addNode(2);
         busStops.addNode(3);
