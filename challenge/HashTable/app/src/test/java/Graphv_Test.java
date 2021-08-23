@@ -1,20 +1,20 @@
-import Graph.Graph;
+import Graph.Graphv;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Graph_Test {
+public class Graphv_Test {
 
-    Graph<Integer> empty;
-    Graph<String> airports;
-    Graph<Integer> busStops;
+    Graphv<Integer,Integer> empty;
+    Graphv<String, Integer> airports;
+    Graphv<Integer,Integer> busStops;
 
     @Before
     public void init(){
 
-        empty = new Graph<Integer>();
-        airports = new Graph<String>();
+        empty = new Graphv<Integer,Integer>();
+        airports = new Graphv<String,Integer>();
         airports.addNode("Amman");
         airports.addNode("Aqaba");
         airports.addNode("Assab");
@@ -29,7 +29,7 @@ public class Graph_Test {
         airports.addEdge("Dafyanah", "Prince Hassan Air Base");
         airports.addEdge("Mafraq", "King Hussein Air Base");
 
-        busStops = new Graph<Integer>();
+        busStops = new Graphv<Integer,Integer>();
         busStops.addNode(1);
         busStops.addNode(2);
         busStops.addNode(3);

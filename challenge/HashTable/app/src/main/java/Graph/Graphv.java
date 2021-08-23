@@ -8,18 +8,18 @@ import queue.Queue;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Graph<V> {
+public class Graphv<V,W> {
 
-    private HashMap<V, LinkedList<GraphNode<V>>> nodes;
+    private HashMap<V, LinkedList<Vertex<V,W>>> nodes;
     private int size;
 
-    public Graph() {
-        nodes = new HashMap<V, LinkedList<GraphNode<V>>>();
+    public Graphv() {
+        nodes = new HashMap<V, LinkedList<Vertex<V,W>>>();
     }
 
     public V addNode(V data){
-//        GraphNode<V> vertex = new GraphNode<V>(data);
-        nodes.put(data,new LinkedList<GraphNode<V>>());
+//        Vertex<V> vertex = new Vertex<V>(data);
+        nodes.put(data,new LinkedList<Vertex<V,W>>());
         size++;
         return data;
 
@@ -29,10 +29,20 @@ public class Graph<V> {
         if (!nodes.contain(data1) || !nodes.contain(data2)) {
             return;
         }
-//        GraphNode<V> vertex1 = new GraphNode<V>(data1);
-//        GraphNode<V> vertex2 = new GraphNode<V>(data2);
-        nodes.get(data1).append(new GraphNode<V>(data2));
-        nodes.get(data2).append(new GraphNode<V>(data1));
+//        Vertex<V> vertex1 = new Vertex<V>(data1);
+//        Vertex<V> vertex2 = new Vertex<V>(data2);
+        nodes.get(data1).append(new Vertex<V,W>(data2));
+        nodes.get(data2).append(new Vertex<V,W>(data1));
+    }
+
+    public void addEdge(V data1 , V data2,W weight){
+        if (!nodes.contain(data1) || !nodes.contain(data2)) {
+            return;
+        }
+//        Vertex<V> vertex1 = new Vertex<V>(data1);
+//        Vertex<V> vertex2 = new Vertex<V>(data2);
+        nodes.get(data1).append(new Vertex<V,W>(data2,weight));
+        nodes.get(data2).append(new Vertex<V,W>(data1,weight));
     }
 
     public  String print(){
@@ -52,7 +62,7 @@ public class Graph<V> {
     public List<V> getNode(){
         return nodes.keySet();
     }
-    public LinkedList<GraphNode<V>> getNeighbors(V data){
+    public LinkedList<Vertex<V,W>> getNeighbors(V data){
        return nodes.get(data);
     }
 
@@ -70,9 +80,9 @@ public class Graph<V> {
         while (!breadth.isEmpty()){
             V front = breadth.dequeue();
             result.add(front);
-            LinkedList<GraphNode<V>> nodeChild =nodes.get(front);
+            LinkedList<Vertex<V,W>> nodeChild =nodes.get(front);
             for (int i = 0; i < nodeChild.getSize(); i++) {
-                GraphNode<V> edge = nodeChild.get(i);
+                Vertex<V,W> edge = nodeChild.get(i);
                 if (!visited.contains(edge.getValue())) {
                     breadth.enqueue(edge.getValue());
                     visited.add(edge.getValue());
