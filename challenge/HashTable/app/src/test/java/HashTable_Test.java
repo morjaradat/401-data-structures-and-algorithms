@@ -3,7 +3,7 @@
  */
 
 
-import HashTable.HashTables;
+import Hashtable.HashTable.HashTables;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

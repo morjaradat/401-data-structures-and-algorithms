@@ -1,5 +1,5 @@
-import BinaryTree.BinarySearchTree;
-import HashMapTree.TreeHashMap;
+import Hashtable.BinaryTree.BinarySearchTree;
+import Hashtable.HashMapTree.TreeHashMap;
 import org.junit.Before;
 import org.junit.Test;
 

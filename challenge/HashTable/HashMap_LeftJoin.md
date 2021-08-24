@@ -2,7 +2,7 @@
 
 # Challenge Summary
 <!-- Description of the challenge -->
-* create a method called left join that take two HashMap and zip the right HashMap to the left HashMap and return new HashMap that contain the key of the left HashMap with the value of the left and the right .
+* create a method called left join that take two Hashtable.HashMap and zip the right Hashtable.HashMap to the left Hashtable.HashMap and return new Hashtable.HashMap that contain the key of the left Hashtable.HashMap with the value of the left and the right .
 
 
 ## Whiteboard Process
@@ -13,7 +13,7 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-* add KeySet and contain method to the HashMap
+* add KeySet and contain method to the Hashtable.HashMap
 * use KeySet to go the keys for left hashMap 
 * use contain to check if the key exist in the right hashMap
 
