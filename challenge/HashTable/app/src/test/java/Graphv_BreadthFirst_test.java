@@ -1,4 +1,4 @@
-import Graph.Graphv;
+import Hashtable.Graph.Graphv;
 import org.junit.Before;
 import org.junit.Test;
 

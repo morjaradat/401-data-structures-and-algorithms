@@ -1,5 +1,5 @@
-import Graph.Graphv;
-import Trip.BusinessTrip;
+import Hashtable.Graph.Graphv;
+import Hashtable.Trip.BusinessTrip;
 import org.junit.Before;
 import org.junit.Test;
 

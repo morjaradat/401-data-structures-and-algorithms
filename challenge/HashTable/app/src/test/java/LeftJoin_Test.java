@@ -1,6 +1,6 @@
 
-import HashMap.HashMap;
-import LeftJoin.LeftJoin;
+import Hashtable.HashMap.HashMap;
+import Hashtable.LeftJoin.LeftJoin;
 import org.junit.Before;
 import org.junit.Test;
 
